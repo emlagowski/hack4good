@@ -2,11 +2,11 @@ import classes from "./RankingChart.module.css";
 import { RankingChartBar } from "./RankingChartBar.component";
 
 interface RankingChartProps {
-    chart: RankingChart
+    chart: IRankingChart
     title: string
 }
 
-interface RankingChart {
+export interface IRankingChart {
     leader: RankingChartPerson;
     before: RankingChartPerson;
     me: RankingChartPerson;

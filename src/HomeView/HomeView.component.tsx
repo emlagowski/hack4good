@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { Evolution, Point } from "../Evolution/Evolution.component";
 import { FootprintDashboard } from "../FootprintDashboard/FootprintDashboard.component";
 import { Ranking } from "../Ranking/Ranking.component";
+import { IRankingChart } from "../Ranking/RankingChart.component";
 import classes from "./HomeView.module.css";
 
 interface Data {
     chart: Point[];
+    rankings: IRankingChart[];
 }
 
 export const HomeView: React.FC = () => {
@@ -27,7 +29,7 @@ export const HomeView: React.FC = () => {
             {data && <FootprintDashboard data={data} />}
             {data && <Evolution data={data.chart}/>}
             </div>
-            <Ranking />
+            {data && <Ranking data={data.rankings} />}
         </div>
     );
 };

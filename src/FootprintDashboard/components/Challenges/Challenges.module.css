@@ -2,3 +2,8 @@
     display: flex;
     flex-direction: row;
 }
+@media screen and (max-width: 800px) {
+    .challengesContainer {
+        flex-direction: column;
+    }
+  }
