@@ -1,13 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Evolution } from "../Evolution/Evolution.component";
+import { Evolution, Point } from "../Evolution/Evolution.component";
 import { FootprintDashboard } from "../FootprintDashboard/FootprintDashboard.component";
 import { Ranking } from "../Ranking/Ranking.component";
 import classes from "./HomeView.module.css";
 
+interface Data {
+    chart: Point[];
+}
 
 export const HomeView: React.FC = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<Data|null>(null);
     useEffect(() => {
     const fetchData = async () => {
         const response = await axios.get("https://api.haag4good.pl/data");
@@ -22,8 +25,7 @@ export const HomeView: React.FC = () => {
         <div className={classes.container}>
             <div className={classes.topContainer}>
             {data && <FootprintDashboard data={data} />}
-            <Evolution />
-            
+            {data && <Evolution data={data.chart}/>}
             </div>
             <Ranking />
         </div>
