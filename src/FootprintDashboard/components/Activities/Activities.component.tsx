@@ -1,6 +1,5 @@
-import { isTemplateExpression } from "typescript";
 import { DataProps } from "../../FootprintDashboard.component";
-import { Activity, ActivityProps } from "../Activity/Activity.component";
+import { Activity } from "../Activity/Activity.component";
 import classes from "./Activities.module.css";
 
 interface FootPrintItem {
