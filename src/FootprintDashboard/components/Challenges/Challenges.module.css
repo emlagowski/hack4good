@@ -1,0 +1,4 @@
+.challengesContainer {
+    display: flex;
+    flex-direction: row;
+}

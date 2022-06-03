@@ -1,0 +1,25 @@
+.container {
+    background-color: #213148;
+    border: 1px solid #336FCB;
+    padding: 20px;
+    width: 20%;
+    margin-right: 25px;
+}
+
+.small {
+    font-size: 0.75rem;
+    color: #CCDBF2;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.amount {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 15px;
+}
