@@ -1,8 +1,15 @@
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./Login/Login.component";
+import { HomeView } from "./HomeView/HomeView.component";
+
+import "./styles.scss";
+
 function App() {
   return (
-    <div className="App">
-      <p>Hello World!</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomeView />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 
