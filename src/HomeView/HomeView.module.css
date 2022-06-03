@@ -14,9 +14,4 @@
     display: grid;
     place-content: center;
     cursor: pointer;
-
-    &:hover {
-        height: 500px;
-        width: 20%;
-    }
 }

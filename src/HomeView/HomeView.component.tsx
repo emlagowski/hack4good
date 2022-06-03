@@ -1,4 +1,4 @@
-import classes from "./HomeView.module.scss";
+import classes from "./HomeView.module.css";
 
 
 export const HomeView: React.FC = () => {

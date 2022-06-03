@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./Login/Login.component";
 import { HomeView } from "./HomeView/HomeView.component";
 
-import "./styles.scss";
+import "./styles.css";
 
 function App() {
   return (
