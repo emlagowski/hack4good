@@ -4,7 +4,8 @@ import classes from "./Challenge.module.css";
 
 interface ChallengeProps {
     name: string;
-    amount: number;
+    amount: string;
+    streak: number;
 }
 
 export const Challenge: React.FC<ChallengeProps> = (props) => {
