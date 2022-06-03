@@ -16,7 +16,7 @@ export const Evolution: React.FC<DataProps> = (props) => {
 
     return (
         <div className={classes.container}>
-          <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> do I emmit over time?</h2>
+          <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> do I emit over time?</h2>
           <ResponsiveContainer height="80%">
             <LineChart
               width={500}
