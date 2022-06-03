@@ -17,9 +17,9 @@ export const RankingChartBar: React.FC<RankingChartPersonProps> = (props) => {
         <div className={classes.barcontainer}>
             <div>{value}.</div>
             <div className={classes.bar} style={{height: props.height}}>
-                {position} g
+                {/* {position} g */}
             </div>
-            <img src={url} alt="avatar"/>
+            <img src={url} alt="avatar" width="20"/>
         </div>
     );
 };

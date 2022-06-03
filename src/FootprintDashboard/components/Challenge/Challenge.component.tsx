@@ -9,11 +9,11 @@ interface ChallengeProps {
 }
 
 export const Challenge: React.FC<ChallengeProps> = (props) => {
-const {name, amount} = props;
+const {name, amount, streak} = props;
 
     return (
         <div className={classes.container}>
-            <div className={classes.small}>streak 3 days in a row</div>
+            <div className={classes.small}>{streak} {streak > 1 ? "days" : "day"} in a row</div>
             <div className={classes.name}>{name}</div>
             <div className={classes.small}>that will save</div>
             <div className={classes.amount}>{amount}g</div>

@@ -1,5 +1,12 @@
 .chart {
     display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+}
 
-    background-color: #1f1c1c;
+.container {
+    padding: 20px;
+    background-color: #414141;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }

@@ -1,6 +1,6 @@
 import classes from "./Ranking.module.css";
 import { RankingChart } from "./RankingChart.component";
-
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 export const Ranking: React.FC = () => {
     const data = [
@@ -52,6 +52,8 @@ export const Ranking: React.FC = () => {
 
     return (
         <div className={classes.container}>
+            <h2><DashboardIcon style={{color: '#EA650D'}}/>How do I compare to others?</h2>
+            <h3>Ranking</h3>
             <RankingChart chart={data[0]} title="You against peers"/>
             <RankingChart chart={data[1]} title="You against other teams"/>
         </div>

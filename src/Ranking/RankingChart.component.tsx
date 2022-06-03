@@ -22,7 +22,7 @@ interface RankingChartPerson {
 export const RankingChart: React.FC<RankingChartProps> = (props) => {
     const  { leader, me, before, after }= props.chart;
     return (
-        <div>
+        <div className={classes.container}>
             <div>{props.title}</div>
             <div className={classes.chart}>
                 <RankingChartBar person={leader} height={1}/>
