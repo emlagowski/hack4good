@@ -10,7 +10,7 @@ export const FootprintDashboard: React.FC<DataProps> = ({data}) => {
 
     return (
         <div className={classes.container}>
-            <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> did I emmit yesterday?</h2>
+            <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> did I emit yesterday?</h2>
             <Activities data={data} />
             <Challenges data={data} />
 
