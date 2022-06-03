@@ -1,9 +1,12 @@
 import classes from "./Ranking.module.css";
-import { RankingChart } from "./RankingChart.component";
+import { IRankingChart, RankingChart } from "./RankingChart.component";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 
-export const Ranking: React.FC = () => {
-    const data = [
+interface RankingProps {
+    data: IRankingChart[];
+}
+export const Ranking: React.FC<RankingProps> = ({data}) => {
+/*     const data = [
         {
             "leader": {
                 "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
@@ -48,7 +51,7 @@ export const Ranking: React.FC = () => {
                 "position": 13000
             }
         }
-    ]
+    ] */
 
     return (
         <div className={classes.container}>
