@@ -16,3 +16,10 @@
 img {
     border-radius: 50%;
   }
+
+  .barMe {
+    background-color: #EE7F00;
+    margin-bottom: 10px;
+    width: 10px;
+    border-radius: 10px;
+}

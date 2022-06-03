@@ -12,11 +12,13 @@ interface RankingChartPerson {
 }
 
 export const RankingChartBar: React.FC<RankingChartPersonProps> = (props) => {
-    const  { url, value, position }= props.person;
+    const  { url, value }= props.person;
+    const barClass = props.height === 20 ? classes.barMe : classes.bar;
+
     return (
         <div className={classes.barcontainer}>
-            <div>{value}.</div>
-            <div className={classes.bar} style={{height: props.height}}>
+            <div>{value}</div>
+            <div className={barClass} style={{height: props.height}}>
                 {/* {position} g */}
             </div>
             <img src={url} alt="avatar" width="20"/>
