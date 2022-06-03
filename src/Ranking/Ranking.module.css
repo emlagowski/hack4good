@@ -6,3 +6,10 @@
     margin-left: 0;
     min-width: 240px;
 }
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: initial;
+        margin: 20px 10px;
+    }
+  }

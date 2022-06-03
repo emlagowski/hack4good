@@ -3,3 +3,8 @@
     padding: 20px;
     margin: 50px;
 }
+@media screen and (max-width: 800px) {
+    .container {
+        margin: 20px 0;
+    }
+  }
