@@ -1,17 +1,10 @@
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
 }
 
-.challenge {
-    height: 400px;
-    width: 15%;
-    background-color: #1c1f1d;
-    display: grid;
-    place-content: center;
-    cursor: pointer;
+.topContainer {
+    display: flex;
+    flex-direction: column;
 }
