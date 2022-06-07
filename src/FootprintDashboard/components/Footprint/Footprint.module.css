@@ -25,17 +25,20 @@
 .count {
     font-size: 2.5rem;
     margin-top: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .unit {
     font-size: 1.5rem;
+    align-self: end;
 }
 
 .tipIcon {
     font-size: 0.5rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1300px) {
     .container {
         margin-bottom: 20px;
     }

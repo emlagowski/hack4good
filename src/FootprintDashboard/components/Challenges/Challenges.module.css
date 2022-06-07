@@ -1,9 +1,14 @@
+.container {
+    margin-top: 50px;
+}
+
 .challengesContainer {
     display: flex;
     flex-direction: row;
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 900px) {
     .challengesContainer {
         flex-direction: column;
     }
-  }
+}

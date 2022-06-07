@@ -1,64 +1,28 @@
 import classes from "./Ranking.module.css";
-import { IRankingChart, RankingChart } from "./RankingChart.component";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import { IRanking } from "../Utils/types";
+import { RankingChart } from "./RankingChart.component";
+import { Title } from "../Title/Title.component";
 
 interface RankingProps {
-    data: IRankingChart[];
+    rankings: IRanking[];
 }
-export const Ranking: React.FC<RankingProps> = ({data}) => {
-/*     const data = [
-        {
-            "leader": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 1,
-                "position": 220
-            },
-            "me": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 14,
-                "position": 4678
-            },
-            "before": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 13,
-                "position": 4500
-            },
-            "after": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 15,
-                "position": 4900
-            }
-        },
-        {
-            "leader": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 1,
-                "position": 2000
-            },
-            "me": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 101,
-                "position": 12000
-            },
-            "before": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 100,
-                "position": 10101
-            },
-            "after": {
-                "url": "https://randomuser.me/api/portraits/thumb/men/75.jpg",
-                "value": 1102,
-                "position": 13000
-            }
-        }
-    ] */
 
+export const Ranking: React.FC<RankingProps> = ({rankings}) => {
     return (
         <div className={classes.container}>
-            <h2><DashboardIcon style={{color: '#EA650D'}}/>How do I compare to others?</h2>
+            <Title text={<span>How do I compare to others?</span>} />
             <h3>Ranking</h3>
-            <RankingChart chart={data[0]} title="You against peers"/>
-            <RankingChart chart={data[1]} title="You against other teams"/>
+
+            <div className={classes.rankingContainer}>
+                <h4 className={classes.rankingTitle}>You against peers</h4>
+                <RankingChart chart={rankings[0]} />
+            </div>
+
+            <div className={classes.rankingContainer}>
+                <h4 className={classes.rankingTitle}>You against other teams</h4>
+                <RankingChart chart={rankings[1]} />
+            </div>
+
         </div>
     );
 };

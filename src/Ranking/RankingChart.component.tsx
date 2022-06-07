@@ -1,29 +1,15 @@
+import { IRanking } from "../Utils/types";
 import classes from "./RankingChart.module.css";
 import { RankingChartBar } from "./RankingChartBar.component";
 
 interface RankingChartProps {
-    chart: IRankingChart
-    title: string
+    chart: IRanking;
 }
 
-export interface IRankingChart {
-    leader: RankingChartPerson;
-    before: RankingChartPerson;
-    me: RankingChartPerson;
-    after: RankingChartPerson;
-}
-
-interface RankingChartPerson {
-    url: string,
-    value: number,
-    position: number
-}
-
-export const RankingChart: React.FC<RankingChartProps> = (props) => {
-    const  { leader, me, before, after }= props.chart;
+export const RankingChart: React.FC<RankingChartProps> = ({chart}) => {
+    const  { leader, me, before, after }= chart;
     return (
         <div className={classes.container}>
-            <div>{props.title}</div>
             <div className={classes.chart}>
                 <RankingChartBar person={leader} height={1}/>
                 <RankingChartBar person={before} height={10}/>

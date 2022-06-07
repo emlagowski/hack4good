@@ -1,19 +1,20 @@
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import { Activities } from "./components/Activities/Activities.component";
+import { Footprints } from "./components/Footprints/Footprints.component";
 import { Challenges } from "./components/Challenges/Challenges.component";
 import classes from "./FootprintDashboard.module.css";
+import { IChallenge, IFootprint } from '../Utils/types';
+import { Title } from '../Title/Title.component';
 
-export interface DataProps {
-    data: any;
+export interface FootprintDashboardProps {
+    footprints: IFootprint[];
+    challenges: IChallenge[];
 }
-export const FootprintDashboard: React.FC<DataProps> = ({data}) => {
 
+export const FootprintDashboard: React.FC<FootprintDashboardProps> = ({footprints, challenges}) => {
     return (
         <div className={classes.container}>
-            <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> did I emit yesterday?</h2>
-            <Activities data={data} />
-            <Challenges data={data} />
-
+            <Title text={<span>How much CO<sub>2</sub> did I emit yesterday?</span>} />
+            <Footprints footprints={footprints} />
+            <Challenges challenges={challenges} />
         </div>
     );
 };

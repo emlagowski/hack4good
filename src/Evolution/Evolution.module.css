@@ -1,13 +1,13 @@
 .container {
     height: 300px;
     background-color: #1c1f1d;
-    padding: 20px;
+    padding: 30px;
     margin: 50px;
     margin-top: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .container {
         margin: 0;
     }
-  }
+}

@@ -1,27 +1,21 @@
+import { IUser } from "../Utils/types";
 import classes from "./RankingChartBar.module.css";
 
 interface RankingChartPersonProps {
-    person: RankingChartPerson,
+    person: IUser,
     height: number
 }
 
-interface RankingChartPerson {
-    url: string,
-    value: number,
-    position: number
-}
-
-export const RankingChartBar: React.FC<RankingChartPersonProps> = (props) => {
-    const  { url, value }= props.person;
-    const barClass = props.height === 20 ? classes.barMe : classes.bar;
+export const RankingChartBar: React.FC<RankingChartPersonProps> = ({ person, height }) => {
+    const  { url, value } = person;
+    // Change to highlighting the user score based on the logged in user's id once it's added
+    const barClass = height === 20 ? classes.barMe : classes.bar;
 
     return (
-        <div className={classes.barcontainer}>
+        <div className={classes.barContainer}>
             <div>{value}</div>
-            <div className={barClass} style={{height: props.height}}>
-                {/* {position} g */}
-            </div>
-            <img src={url} alt="avatar" width="20"/>
+            <div className={barClass} style={{ height }} />
+            <img src={url} alt="avatar" width="20" />
         </div>
     );
 };

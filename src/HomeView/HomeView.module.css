@@ -10,7 +10,7 @@
     width: 80%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .topContainer {
         width: 60%;
         min-width: 350px;
@@ -20,4 +20,4 @@
         flex-direction: column;
         align-items: center;
     }
-  }
+}

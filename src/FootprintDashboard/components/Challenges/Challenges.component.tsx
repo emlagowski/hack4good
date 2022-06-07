@@ -1,22 +1,18 @@
-import { DataProps } from "../../FootprintDashboard.component";
 import { Challenge } from "../Challenge/Challenge.component";
 import classes from "./Challenges.module.css";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import { IChallenge } from "../../../Utils/types";
+import { Title } from "../../../Title/Title.component";
 
-interface ChallengeItem {
- name: string;
- streakDays: number;
- value: string;
+interface ChallengesProps {
+    challenges: IChallenge[];
 }
 
-export const Challenges: React.FC<DataProps> = ({data}) => {
-
-
+export const Challenges: React.FC<ChallengesProps> = ({challenges}) => {
     return (
         <div className={classes.container}>
-            <h2><DashboardIcon style={{color: '#EA650D'}}/>Challenges for today</h2>
+            <Title text={<span>Challenges for today</span>} />
             <div className={classes.challengesContainer}>
-            {data.challenges.map((item: ChallengeItem) => <Challenge name={item.name} amount={item.value} streak={item.streakDays} />)}
+            {challenges?.map((item) => <Challenge key={item.name} name={item.name} amount={item.value} streak={item.streakDays} />)}
             </div>
         </div>
     );

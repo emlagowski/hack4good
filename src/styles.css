@@ -6,3 +6,8 @@ body {
   font-family: "Montserrat", Helvetica, sans-serif;
   color: #a6d1c9;
 }
+
+h2 {
+  margin-top: 0;
+  margin-left: 10px;
+}

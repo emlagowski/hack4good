@@ -1,40 +1,32 @@
 import classes from "./Evolution.module.css";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-export interface DataProps {
-  data: Point[];
+import { IChart } from "../Utils/types";
+import { Title } from "../Title/Title.component";
+
+interface EvolutionProps {
+  chart: IChart[];
 }
 
-export interface Point {
-  name: string;
-  uv: number;
-  pv: number;
-}
-
-export const Evolution: React.FC<DataProps> = (props) => {
-    const data = props.data;
+export const Evolution: React.FC<EvolutionProps> = ({chart}) => {
+  const data = chart.map(({name, uv, pv})=> ({name, uv: +uv, pv: +pv}));
 
     return (
         <div className={classes.container}>
-          <h2><DashboardIcon style={{color: '#EA650D'}}/>How much CO<sub>2</sub> do I emit over time?</h2>
-          <ResponsiveContainer height="80%">
+          <Title text={<span>How much CO<sub>2</sub> do I emit over time?</span>} />
+          <ResponsiveContainer height="100%">
             <LineChart
-              width={500}
-              height={300}
               data={data}
               margin={{
-                top: 40,
-                right: 30,
-                left: 20,
-                bottom: 5,
+                top: 10,
+                bottom: 60,
               }}
             >
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis height={33340} />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="pv" name="Your usage" stroke="#8884d8" activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="uv" name="Trends" stroke="#d88e84" dot={false} />
+              <Line type="natural" dataKey="pv" name="Your usage" stroke="#8884d8" activeDot={{ r: 8 }} />
+              <Line type="natural" dataKey="uv" name="Trends" stroke="#d88e84" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>

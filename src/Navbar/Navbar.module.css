@@ -7,13 +7,10 @@
     align-items: center;
 }
 
-.name {
-    margin-right: 20px;
-}
-
 .user {
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    margin-right: 40px;
 }
